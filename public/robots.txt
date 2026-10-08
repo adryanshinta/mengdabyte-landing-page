@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mengdabyte.web.id/sitemap.xml

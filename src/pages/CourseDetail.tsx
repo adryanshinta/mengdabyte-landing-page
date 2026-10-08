@@ -1,0 +1,34 @@
+import { ArrowLeft, ArrowRight, BadgeCheck, Check, ChevronRight, Clock3, Code2, Languages, Monitor, Tag } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
+import { Link, useParams } from 'react-router-dom'
+import { getCourseBySlug } from '../services/content.service'
+import { getCourseWaMessage, getWaLink } from '../lib/whatsapp'
+import { SITE_URL } from '../lib/seo'
+import { Badge } from '../components/ui/Badge'
+import { Button } from '../components/ui/Button'
+import { Card } from '../components/ui/Card'
+
+const courseIcons = { Languages, Monitor, Code2 }
+
+export function CourseDetail() {
+  const { slug } = useParams()
+  const course = slug ? getCourseBySlug(slug) : undefined
+  if (!course) return <main className="flex min-h-[65vh] items-center justify-center px-5 py-20"><div className="text-center"><p className="text-sm font-semibold text-primary">404 · Program tidak ditemukan</p><h1 className="mt-3 font-heading text-3xl font-bold text-slate-950">Halaman ini belum tersedia</h1><p className="mt-3 text-sm text-slate-600">Program yang kamu cari mungkin sudah dipindahkan atau tidak tersedia.</p><Link to="/" className="mt-7 inline-flex"><Button><ArrowLeft size={16} /> Kembali ke Beranda</Button></Link></div></main>
+
+  const Icon = courseIcons[course.iconName as keyof typeof courseIcons] ?? Code2
+  const message = getCourseWaMessage(course.title)
+  const courseSchema = { '@context': 'https://schema.org', '@type': 'Course', name: course.title, description: course.description, provider: { '@type': 'Organization', name: 'PT Mengdabyte Digital Indonesia', sameAs: SITE_URL }, offers: { '@type': 'Offer', price: course.price.replace(/[^0-9]/g, ''), priceCurrency: 'IDR' } }
+  return <>
+    <Helmet><title>{course.title} - PT Mengdabyte Digital Indonesia</title><meta name="description" content={course.description} /><link rel="canonical" href={`${SITE_URL}/kursus/${course.slug}`} /><meta property="og:title" content={`${course.title} - Mengdabyte`} /><meta property="og:description" content={course.description} /><script type="application/ld+json">{JSON.stringify(courseSchema)}</script></Helmet>
+    <main className="bg-slate-50 px-5 py-10 sm:px-8 sm:py-14"><div className="mx-auto max-w-7xl">
+      <nav aria-label="Breadcrumb" className="mb-8 flex flex-wrap items-center gap-2 text-sm text-slate-500"><Link to="/" className="hover:text-primary">Beranda</Link><ChevronRight size={15} /><a href="/#program" className="hover:text-primary">Program</a><ChevronRight size={15} /><span className="font-medium text-slate-800">{course.title}</span></nav>
+      <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_350px] lg:gap-12">
+        <div><div className="flex flex-wrap items-center gap-3"><Badge>Program keterampilan</Badge>{course.hasCertificate && <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700"><BadgeCheck size={15} /> E-Sertifikat resmi</span>}</div><h1 className="mt-4 max-w-3xl font-heading text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl">{course.title}</h1><p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">{course.description}</p>
+          <div className="mt-7 grid max-w-xl gap-3 sm:grid-cols-2"><div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4"><span className="rounded-lg bg-blue-50 p-2 text-primary"><Clock3 size={19} /></span><div><p className="text-xs text-slate-500">Durasi program</p><p className="mt-1 text-sm font-semibold text-slate-900">{course.duration}</p></div></div><div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4"><span className="rounded-lg bg-blue-50 p-2 text-primary"><Tag size={19} /></span><div><p className="text-xs text-slate-500">Investasi belajar</p><p className="mt-1 text-sm font-semibold text-slate-900">{course.price}</p></div></div></div>
+          <div className="mt-10 space-y-8"><section><h2 className="font-heading text-xl font-bold text-slate-950">Tentang program</h2><p className="mt-3 text-sm leading-7 text-slate-600">{course.longDescription}</p></section><section><h2 className="font-heading text-xl font-bold text-slate-950">Apa yang akan kamu pelajari</h2><ul className="mt-4 grid gap-3 sm:grid-cols-2">{course.features.map((feature) => <li key={feature} className="flex items-center gap-2.5 text-sm text-slate-600"><span className="rounded-full bg-emerald-50 p-1 text-emerald-600"><Check size={14} /></span>{feature}</li>)}</ul></section><section><h2 className="font-heading text-xl font-bold text-slate-950">Untuk siapa program ini?</h2><p className="mt-3 text-sm leading-7 text-slate-600">Program ini cocok untuk pemula yang ingin mengembangkan keterampilan baru, pelajar, mahasiswa, fresh graduate, maupun siapa saja yang ingin menyiapkan diri menghadapi peluang karier masa depan.</p></section><section><h2 className="font-heading text-xl font-bold text-slate-950">Output & sertifikat</h2><p className="mt-3 text-sm leading-7 text-slate-600">Setelah menyelesaikan program, peserta akan memiliki pemahaman dan keterampilan praktis sesuai materi pembelajaran. {course.hasCertificate ? 'Peserta yang menyelesaikan pelatihan akan menerima E-Sertifikat resmi dari PT Mengdabyte Digital Indonesia.' : 'Informasi sertifikat dapat ditanyakan kepada admin kami.'}</p></section></div>
+        </div>
+        <aside className="lg:sticky lg:top-24"><Card className="p-6 shadow-sm"><div className="flex items-center gap-3"><span className="rounded-xl bg-blue-50 p-3 text-primary"><Icon size={24} /></span><div><p className="text-xs text-slate-500">Program</p><p className="font-semibold text-slate-900">{course.title}</p></div></div><div className="mt-6 border-y border-slate-100 py-5"><p className="text-sm text-slate-500">Investasi program</p><p className="mt-1 font-heading text-3xl font-bold text-slate-950">{course.price}</p>{course.priceOriginal && <p className="mt-1 text-sm text-slate-400 line-through">{course.priceOriginal}</p>}</div><dl className="space-y-4 py-5 text-sm"><div className="flex justify-between gap-4"><dt className="text-slate-500">Durasi</dt><dd className="text-right font-medium text-slate-800">{course.duration}</dd></div><div className="flex justify-between"><dt className="text-slate-500">Level</dt><dd className="font-medium text-slate-800">{course.level}</dd></div><div className="flex justify-between"><dt className="text-slate-500">Sertifikat</dt><dd className="font-medium text-slate-800">{course.hasCertificate ? 'Ya, resmi' : 'Hubungi admin'}</dd></div></dl><a href={getWaLink(message)} target="_blank" rel="noreferrer"><Button className="w-full">Daftar via WhatsApp <ArrowRight size={16} /></Button></a><p className="mt-3 text-center text-xs text-slate-500">Konsultasi gratis dengan admin kami</p></Card></aside>
+      </div>
+    </div></main>
+  </>
+}

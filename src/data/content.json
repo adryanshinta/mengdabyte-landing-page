@@ -1,0 +1,107 @@
+{
+  "company": {
+    "name": "PT Mengdabyte Digital Indonesia",
+    "tagline": "Semua Orang Punya Kesempatan Belajar yang Sama",
+    "heroTitle": "Akses Pendidikan Berkualitas & Terjangkau untuk Masa Depan Global",
+    "heroSubtitle": "Kami memfasilitasi setiap talenta untuk berkembang tanpa terkendala biaya mahal.",
+    "email": "mengdabyte@gmail.com",
+    "phone": "087859228358",
+    "address": "Gegek Liqok, Perian, Kec. Montong Gading, Kabupaten Lombok Timur, Nusa Tenggara Bar. 83553",
+    "website": "mengdabyte.web.id"
+  },
+  "courses": [
+    {
+      "id": "c1",
+      "slug": "bahasa-mandarin-dasar",
+      "title": "Bahasa Mandarin Dasar",
+      "category": "basic",
+      "description": "Pembelajaran dasar Bahasa Mandarin untuk komunikasi dan persiapan karier global.",
+      "longDescription": "Program ini dirancang untuk pemula yang ingin menguasai dasar-dasar Bahasa Mandarin untuk kebutuhan komunikasi sehari-hari dan persiapan kerja di perusahaan global. Fokus pada percakapan, kosakata kerja, dan pengenalan Hanzi dasar.",
+      "duration": "12 Minggu / 24 Pertemuan",
+      "price": "Rp 350.000",
+      "priceOriginal": "Rp 700.000",
+      "level": "Pemula",
+      "features": ["24x Live Session", "Modul PDF & Hanzi", "Latihan Percakapan", "E-Sertifikat Resmi"],
+      "hasCertificate": true,
+      "isComingSoon": false,
+      "iconName": "Languages"
+    },
+    {
+      "id": "c2",
+      "slug": "komputasi-dasar",
+      "title": "Komputasi Dasar",
+      "category": "basic",
+      "description": "Pelatihan dasar pengoperasian komputer dan literasi digital untuk kebutuhan profesional.",
+      "longDescription": "Kuasai dasar komputer dari nol: Microsoft Office, manajemen file, internet, hingga keamanan digital. Cocok untuk pemula yang ingin siap kerja kantoran.",
+      "duration": "4 Minggu / 8 Pertemuan",
+      "price": "Rp 250.000",
+      "priceOriginal": "Rp 500.000",
+      "level": "Pemula",
+      "features": ["8x Live Session", "Praktek Langsung", "Template Dokumen Kerja", "E-Sertifikat Resmi"],
+      "hasCertificate": true,
+      "isComingSoon": false,
+      "iconName": "Monitor"
+    },
+    {
+      "id": "c3",
+      "slug": "pemrograman-dasar",
+      "title": "Pemrograman Dasar",
+      "category": "basic",
+      "description": "Pengenalan logika pemrograman dan pemahaman dasar coding bagi pemula.",
+      "longDescription": "Belajar logika pemrograman dengan cara yang menyenangkan. Cocok untuk yang belum pernah coding. Materi meliputi algoritma, flowchart, dan pengenalan HTML, CSS, JavaScript dasar.",
+      "duration": "8 Minggu / 16 Pertemuan",
+      "price": "Rp 400.000",
+      "priceOriginal": "Rp 800.000",
+      "level": "Pemula",
+      "features": ["16x Live Session", "Project Mini", "Akses Rekaman 1 Tahun", "E-Sertifikat Resmi"],
+      "hasCertificate": true,
+      "isComingSoon": false,
+      "iconName": "Code2"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "t1",
+      "name": "Ahmad Fauzi",
+      "role": "Alumni Bahasa Mandarin Dasar",
+      "message": "Belajar di Mengdabyte sangat membantu. Materinya terjangkau, pengajarnya sabar dan standar internasional. Sekarang saya lebih percaya diri melamar kerja.",
+      "rating": 5
+    },
+    {
+      "id": "t2",
+      "name": "Siti Rahma",
+      "role": "Peserta Komputasi Dasar - Lombok",
+      "message": "Sebagai pemula yang gaptek, saya akhirnya bisa mengoperasikan komputer untuk kerja kantoran. Penjelasannya sangat mudah dipahami.",
+      "rating": 5
+    },
+    {
+      "id": "t3",
+      "name": "Budi Pratama",
+      "role": "Alumni Pemrograman Dasar",
+      "message": "Materi pemrograman dasarnya daging banget, langsung praktek. Worth it untuk harga segini. Terima kasih Mengdabyte!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "id": "f1",
+      "question": "Siapa saja yang bisa mendaftar program di Mengdabyte Digital Indonesia?",
+      "answer": "Siapa saja! Kami menyambut seluruh talenta dari berbagai daerah dan latar belakang tanpa terkecuali. Tidak ada batasan usia atau pendidikan."
+    },
+    {
+      "id": "f2",
+      "question": "Bagaimana sistem pembelajarannya?",
+      "answer": "Sistem pembelajaran kami Hybrid - Online via Zoom & Google Meet. Fleksibel, bisa diakses dari mana saja, dan rekaman tersedia untuk peserta yang berhalangan hadir."
+    },
+    {
+      "id": "f3",
+      "question": "Apakah ada sertifikat setelah menyelesaikan pelatihan?",
+      "answer": "Ya, semua peserta yang menyelesaikan pelatihan hingga akhir akan mendapatkan E-Sertifikat resmi dari PT Mengdabyte Digital Indonesia yang bisa digunakan untuk melamar kerja."
+    },
+    {
+      "id": "f4",
+      "question": "Bagaimana cara mendaftar dan metode pembayarannya?",
+      "answer": "Klik tombol Daftar Sekarang, Anda akan diarahkan ke WhatsApp Admin kami di 087859228358. Admin akan memandu proses pendaftaran dan pembayaran yang mudah dan terjangkau."
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useRef } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
+import { FloatingWhatsApp } from "./components/layout/FloatingWhatsApp";
 import { Home } from "./pages/Home";
 
 const CourseDetail = lazy(() =>
@@ -50,6 +51,7 @@ export default function App() {
         </Routes>
       </Suspense>
       <Footer />
+      <FloatingWhatsApp />
     </BrowserRouter>
   );
 }

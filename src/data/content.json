@@ -6,7 +6,7 @@
     "heroSubtitle": "Kami memfasilitasi setiap talenta untuk berkembang tanpa terkendala biaya mahal.",
     "email": "mengdabyte@gmail.com",
     "phone": "087859228358",
-    "address": "Gegek Liqok, Perian, Kec. Montong Gading, Kabupaten Lombok Timur, Nusa Tenggara Bar. 83553",
+    "address": "Gegek Liqok, Perian, Kec. Montong Gading, Kabupaten Lombok Timur, Nusa Tenggara Bar. 83663",
     "website": "mengdabyte.web.id"
   },
   "courses": [
@@ -21,7 +21,12 @@
       "price": "Rp 350.000",
       "priceOriginal": "Rp 700.000",
       "level": "Pemula",
-      "features": ["24x Live Session", "Modul PDF & Hanzi", "Latihan Percakapan", "E-Sertifikat Resmi"],
+      "features": [
+        "24x Live Session",
+        "Modul PDF & Hanzi",
+        "Latihan Percakapan",
+        "E-Sertifikat Resmi"
+      ],
       "hasCertificate": true,
       "isComingSoon": false,
       "iconName": "Languages"
@@ -37,7 +42,12 @@
       "price": "Rp 250.000",
       "priceOriginal": "Rp 500.000",
       "level": "Pemula",
-      "features": ["8x Live Session", "Praktek Langsung", "Template Dokumen Kerja", "E-Sertifikat Resmi"],
+      "features": [
+        "8x Live Session",
+        "Praktek Langsung",
+        "Template Dokumen Kerja",
+        "E-Sertifikat Resmi"
+      ],
       "hasCertificate": true,
       "isComingSoon": false,
       "iconName": "Monitor"
@@ -53,7 +63,12 @@
       "price": "Rp 400.000",
       "priceOriginal": "Rp 800.000",
       "level": "Pemula",
-      "features": ["16x Live Session", "Project Mini", "Akses Rekaman 1 Tahun", "E-Sertifikat Resmi"],
+      "features": [
+        "16x Live Session",
+        "Project Mini",
+        "Akses Rekaman 1 Tahun",
+        "E-Sertifikat Resmi"
+      ],
       "hasCertificate": true,
       "isComingSoon": false,
       "iconName": "Code2"
